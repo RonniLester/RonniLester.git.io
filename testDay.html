@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+	<title></title>
+	<script src="http://cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+	<script src="http://cdn.bootcss.com/underscore.js/1.8.3/underscore-min.js"></script>
+	<script src="http://cdn.bootcss.com/lodash.js/4.6.1/lodash.min.js"></script>
+	<!-- <script src="example.js"></script> -->
+	<style>
+		#ss{
+			background-color: #00ff00;
+		}
+		img{
+			height: 300px;
+			width: 1000px
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<!-- <button id="ss">这个事情么</button> -->
+		<img  src="image/a.jpg" style="position: relative;top:250px" />
+		<img src="image/b.jpg" style="position: relative;bottom:300px" />
+		<div>
+			This is demol!
+		</div>
+	</div>
+	<div></div>
+	<script >
+		
+		$(function(){
+			var karr = [{sss:'34',p:'kk'},{sss:'hh',p:'haode'}];
+			var akp = _.groupBy(karr,function(o){return o.sss});
+			console.log(akp);
+			_.each(karr,function(e,i,l){
+				console.log(e);
+				console.log(karr[e]);
+			});
+			//console.log($.fn.jquery);
+			// var btn = document.getElementById("ss");
+			// btn.onclick = function(){
+			// 	confirm("贝贝巴士用户解锁");
+			// }
+			// var testArr = [{'a':1,"b":2,"c":3},{"a":2,"b":4,"c":9},{"a":5,"b":2,"c":1}];
+			// var arrGroup = _.groupBy(testArr,function(c){return testArr.c});
+			// alert(arrGroup);
+			// _.each(arrGroup,function(value,key,list){
+			// 	alert(value);
+			// 	alert(key);
+			// })
+			// alert($.fn.tess());
+		});
+	</script>
+</body>
+</html>

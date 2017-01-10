@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--<link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">-->
+		<script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
+		<script>
+	$(function () {
+
+    // Uncomment to style it like Apple Watch
+//  
+//  if (!Highcharts.theme) {
+//      Highcharts.setOptions({
+//          chart: {
+//              backgroundColor: '#ffffff'
+//          },
+//          colors: ['#F62366', '#9DFF02', '#0CCDD6'],
+//          title: {
+//              style: {
+//                  color: 'silver'
+//              }
+//          },
+//          tooltip: {
+//              style: {
+//                  color: 'silver'
+//              }
+//          }
+//      });
+//  }
+//     
+
+    Highcharts.chart('container', {
+
+        chart: {
+            type: 'solidgauge',
+        },
+
+        title: {
+            text: 'Activity',
+            style: {
+                fontSize: '24px'
+            }
+        },
+
+        tooltip: {
+        	enabled: false
+        },
+
+      pane: {
+            startAngle: 0,
+            endAngle: 360,
+            background: [{ // Track for Move
+                outerRadius: '112%',
+                innerRadius: '88%',
+                backgroundColor: '#ffffff',
+                borderWidth: 0
+            }]
+        },
+        yAxis: {
+            min: 0,
+            max: 100,
+            lineWidth: 0,
+            tickPositions: []
+        },
+
+        plotOptions: {
+            solidgauge: {
+                borderWidth: '10px',
+                dataLabels: {
+                    enabled: false
+                },
+                linecap: 'round',
+                stickyTracking: false
+            }
+        },
+
+        series: [{
+            name: 'Move',
+            borderColor: Highcharts.getOptions().colors[0],
+            data: [{
+                color: Highcharts.getOptions().colors[0],
+                radius: '100%',
+                innerRadius: '100%',
+                y: 80
+            }]
+        }]
+    },
+
+    function callback() {
+        
+    });
+
+
+});
+
+		</script>
+
+	</head>
+	<body>
+		<div id="container" style="width: 400px; height: 400px; margin: 0 auto">
+</div>
+	</body>
+</html>
